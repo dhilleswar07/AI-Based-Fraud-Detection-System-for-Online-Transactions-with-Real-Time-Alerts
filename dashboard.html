@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+    <h2>💳 Fraud Detection Dashboard</h2>
+
+    <div class="nav-buttons">
+        <a href="/admin" class="btn btn-admin">Admin Panel</a>
+        <a href="/logout" class="btn btn-logout">Logout</a>
+    </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+    <h1>Real-Time Transaction Monitoring</h1>
+    <p>AI-powered risk analysis using Random Forest</p>
+</div>
+
+<!-- ================= TRANSACTION CARD ================= -->
+<div class="card">
+
+    <h3>Make Transaction</h3>
+
+    <form method="POST">
+        <input type="number" step="0.01" name="amount" placeholder="Enter Amount" required>
+        <button type="submit">Analyze Transaction</button>
+    </form>
+
+    <!-- 🔽 NEW MANUAL PREDICTION BUTTON -->
+    <div style="margin-top:20px; text-align:center;">
+        <a href="/manual_predict">
+            <button type="button" class="btn btn-admin">
+                🔍 Manual Feature Prediction (29 Features)
+            </button>
+        </a>
+    </div>
+    <!-- 🔼 END NEW BUTTON -->
+
+    {% if status is not none %}
+    <div class="result-section">
+
+        <p class="probability-text">
+            Fraud Probability: <strong>{{ fraud_percent }}%</strong>
+        </p>
+
+        <div class="progress-bar">
+            <div class="progress-fill
+                {% if fraud_percent < 30 %}
+                    risk-low
+                {% elif fraud_percent < 70 %}
+                    risk-medium
+                {% else %}
+                    risk-high
+                {% endif %}
+            "
+            data-width="{{ fraud_percent }}">
+            </div>
+        </div>
+
+        <p class="risk-label">
+            Risk Level:
+            <span class="
+                {% if risk_level == 'LOW' %}
+                    risk-low
+                {% elif risk_level == 'MEDIUM' %}
+                    risk-medium
+                {% else %}
+                    risk-high
+                {% endif %}
+            ">
+                {{ risk_level }}
+            </span>
+        </p>
+
+        {% if status == "SAFE" %}
+            <h3 class="safe">✅ SAFE TRANSACTION</h3>
+        {% else %}
+            <h3 class="fraud">🚨 FRAUD DETECTED</h3>
+        {% endif %}
+
+    </div>
+    {% endif %}
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+<div class="footer">
+    © 2026 AI Fraud Detection System | Random Forest Model
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+document.querySelectorAll('.progress-fill').forEach(bar => {
+    const width = bar.getAttribute('data-width');
+    if (width) {
+        bar.style.width = width + "%";
+    }
+});
+</script>
+
+</body>
+</html>
