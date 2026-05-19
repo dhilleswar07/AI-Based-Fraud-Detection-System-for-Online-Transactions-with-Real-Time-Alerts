@@ -38,7 +38,7 @@ app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 app.config['MAIL_USERNAME'] = "realtime.fraud.alerts@gmail.com"
-app.config['MAIL_PASSWORD'] = "swshnjmydqgxjqhu"
+app.config['MAIL_PASSWORD'] = "*****************************"
 app.config['MAIL_DEFAULT_SENDER'] = app.config['MAIL_USERNAME']
 
 mail = Mail(app)
@@ -79,7 +79,7 @@ def load_user(user_id):
 @app.route("/", methods=["GET","POST"])
 def login():
     if request.method == "POST":
-        if request.form["username"] == "dhilleswar07" and request.form["password"] == "vijay@2005":
+        if request.form["username"] == "dhilleswar07" and request.form["password"] == "***********":
             login_user(User(1))
             return redirect("/dashboard")
     return render_template("login.html")
