@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 python -m venv venv
 
 venv\Scripts\activate
 
+=======
+python -m venv venv
+
+venv\Scripts\activate
+
+>>>>>>> 996f1842a995ae8a2e317166d8f70013db368487
 pip install -r requirements.txt
