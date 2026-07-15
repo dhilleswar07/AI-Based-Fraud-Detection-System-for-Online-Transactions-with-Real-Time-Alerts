@@ -388,7 +388,7 @@ This script analyzes the importance of different features used by the trained fr
 Add your project demonstration video or LinkedIn demo link here.
 
 ```text
-Project Demo: https://www.linkedin.com/posts/dhilleswar07_machinelearning-artificialintelligence-datascience-ugcPost-7483111910595428352-fXgn/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE9BJWMBprA31mKSJdUX64z2yLMING9OPfw
+https://www.linkedin.com/posts/dhilleswar07_machinelearning-artificialintelligence-datascience-ugcPost-7483111910595428352-fXgn/
 ```
 
 ---
