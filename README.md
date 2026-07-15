@@ -103,49 +103,28 @@ The **Random Forest Classifier** was selected as the primary model because of it
 AI-Based-Fraud-Detection-System-for-Online-Transactions-with-Real-Time-Alerts/
 │
 ├── static/
-│   └── Static files such as CSS, JavaScript, and images
+│   ├── bg.jpg                    # Background image used in the web application
+│   └── style.css                 # CSS styling for the Flask web interface
 │
 ├── templates/
-│   └── HTML templates used by the Flask application
+│   ├── admin.html                # Admin panel
+│   ├── dashboard.html            # User dashboard
+│   ├── login.html                # User/Admin login page
+│   └── manual_predict.html       # Manual transaction input and fraud prediction page
 │
-├── venv/
-│   └── Python virtual environment
+├── venv/                         # Python virtual environment
 │
-├── Google collab Code.ipynb
-│   └── Model experimentation and data analysis notebook
-│
-├── app.py
-│   └── Main Flask web application
-│
-├── check_importance.py
-│   └── Feature importance analysis
-│
-├── creditcard.csv
-│   └── Credit card transaction dataset
-│
-├── database.db
-│   └── SQLite database
-│
-├── fraud_model.pkl
-│   └── Saved trained fraud detection model
-│
-├── model_metrics.pkl
-│   └── Saved model evaluation metrics
-│
-├── scaler.pkl
-│   └── Saved feature scaler
-│
-├── train_model.py
-│   └── Model training and evaluation script
-│
-├── requirements.txt
-│   └── Required Python dependencies
-│
-├── read.txt
-│   └── Additional project information
-│
-└── README.md
-    └── Project documentation
+├── app.py                        # Main Flask application
+├── check_importance.py           # Random Forest feature importance analysis
+├── creditcard.csv                # Credit card transaction dataset
+├── database.db                   # SQLite database
+├── fraud_model.pkl               # Saved trained fraud detection model
+├── Google collab Code.ipynb      # Data analysis and model experimentation notebook
+├── model_metrics.pkl             # Saved model evaluation metrics
+├── read.txt                      # Additional project notes
+├── requirements.txt              # Python package dependencies
+├── scaler.pkl                    # Saved feature scaler for input preprocessing
+└── train_model.py                # Model training, evaluation, and model-saving script
 ```
 
 ---
